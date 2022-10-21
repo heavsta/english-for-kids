@@ -1,0 +1,137 @@
+.popup {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: center;
+  overflow: auto;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation-name: darken;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-delay: 500ms;
+}
+
+.popup-content {
+  position: relative;
+  padding: 10px;
+  width: 380px;
+  display: flex;
+  justify-content: center;
+  animation: bringDown;
+  animation-duration: 1200ms;
+}
+
+.confirm-btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+  background-color: #FFFFFF;
+  border: 10px solid #8395FA;
+  border-radius: 1997px;
+  box-shadow: -6px -8px 13px rgba(197, 74, 255, 0.21), 6px 5px 13px rgba(107, 130, 255, 0.5);
+  cursor: pointer;
+  transition: all 300ms ease;
+  z-index: 5;
+}
+
+.confirm-btn:hover {
+  background-color: #8395FA;
+}
+
+.confirm-btn .triangle {
+  width: 150px;
+  height: 150px;
+  background-image: url('../assets/img/triangle.svg');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-left: 30px;
+}
+
+.confirm-btn:hover .triangle {
+  background-image: url('../assets/img/triangle-white.svg');
+}
+
+.confirm-legend {
+  position: absolute;
+  width: 300px;
+  padding: 10px 15px;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #8395FA;
+  font-size: 2em;
+  font-weight: bold;
+  background-color: #FFFFFF;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+  z-index: 3;
+}
+
+.cancel-btn {
+  background: url('../assets/img/cross-light.svg');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 50px;
+  border-radius: 1997px;
+  border: none;
+  cursor: pointer;
+}
+
+.cancel-btn:hover {
+  background-image: url('../assets/img/cross-dark.svg');
+}
+
+@media all and (max-width: 656px) {
+  .popup-content {
+    width: 300px;
+    margin-left: 45px;
+  }
+
+  .confirm-btn {
+    width: 250px;
+    height: 250px;
+  }
+
+  .confirm-btn .triangle {
+    width: 125px;
+    height: 125px;
+  }
+
+  .confirm-legend {
+    width: 200px;
+    font-size: 1.5em;
+  }
+}
+
+@media all and (max-width: 450px) {
+  .popup-content {
+    width: 250px;
+    margin-left: 45px;
+  }
+
+  .confirm-btn {
+    width: 200px;
+    height: 200px;
+  }
+
+  .confirm-btn .triangle {
+    width: 100px;
+    height: 100px;
+  }
+
+  .confirm-legend {
+    width: 200px;
+    font-size: 1.5em;
+  }
+}

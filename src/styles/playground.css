@@ -1,0 +1,511 @@
+main {
+  position: relative;
+  max-width: 1280px;;
+  margin: 0 auto;
+}
+
+main.points {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Amatic SC', cursive;
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #617E93;
+  letter-spacing: 0.05em;
+}
+
+.playground {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 18em;
+  height: 15em;
+  margin: 1em;
+  cursor: pointer;
+
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 700ms ease;
+  border-radius: 15px;
+}
+
+.home-card {
+  position: relative;
+  background-color: #FFFFFF;
+}
+
+.home-card .card-legend {
+  position: absolute;
+  width: 150px;
+  background-color: #dcf8e4;
+  box-shadow: 16px 15px 44px 4px rgba(33, 99, 75, 0.25);
+  border-radius: 15px;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  transition: background-color 300ms ease-in;
+}
+
+.home-card .card-legend h2 {
+  color: #68B6AB;
+  margin: 0.6em auto;
+  transition: color 300ms ease-in;
+}
+
+.gradient {
+  height: 70%;
+  border-radius: 12px;
+  margin: 10px 10px 0 10px;
+  padding-top: 10px;
+}
+
+.home-card .gradient {
+  background: linear-gradient(180deg, #EAF8F6 0%, rgba(247, 247, 247, 0) 100%);
+}
+
+.jobs .gradient, .fantasy .gradient {
+  background: linear-gradient(180deg, #DDD0ED 0%, rgba(247, 247, 247, 0) 100%);
+}
+
+.animals .gradient, .insects .gradient {
+  background: linear-gradient(180deg, #FFE0CF 0%, rgba(247, 247, 247, 0) 100%);
+}
+
+.music .gradient, .school .gradient {
+  background: linear-gradient(180deg, #FFC6C2 0%, rgba(247, 247, 247, 0) 100%);
+}
+
+.vegetables .gradient, .world .gradient {
+  background: linear-gradient(180deg, #D7E9BB 0%, rgba(247, 247, 247, 0) 100%);
+}
+
+.jobs h2, .fantasy h2 {
+  color: #7b4bb1;
+}
+
+.animals h2, .insects h2 {
+  color: #fc9055;
+}
+
+.music h2, .school h2 {
+  color: #fc6257;
+}
+
+.vegetables h2, .world h2 {
+  color: #6ea418;
+}
+
+.home-card .word-img {
+  height: 95%;
+}
+
+.home-card:hover {
+  box-shadow: 6px 5px 14px 4px rgba(46, 116, 139, 0.258);
+}
+
+.home-card:hover .word-img {
+  animation-name: bounce;
+  animation-duration: 500ms;
+}
+
+.home-card:hover .card-legend {
+  background-color: #68B6AB;
+}
+
+.home-card:hover .card-legend h2 {
+  color: #DFFFF9;;
+}
+
+.home-card .card-legend.play {
+  background-color: #e2e1f6;
+}
+
+.home-card .card-legend.play h2 {
+  color: #7b4bb1;
+}
+
+.home-card:hover .card-legend.play {
+  background-color: #9a66d8;
+}
+
+.home-card:hover .card-legend.play h2 {
+  color: #e2e1f6;
+}
+
+.front:hover {
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+.word-img {
+  height: 80%;
+  margin: 0.5em;
+  border-radius: 15px 15px 0 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-clip: content-box;
+  transition: all 600ms ease-in-out;
+}
+
+.word-img.full {
+  height: 100%;
+  border-radius: 15px;
+}
+
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  backface-visibility: hidden;
+  transition: all 700ms ease;
+  box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.05);
+  border-radius: 15px;
+  background-color: #FFFFFF;
+}
+
+.back {
+  transform: rotateY(180deg);
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+.front.rotate {
+  transform: rotateY(180deg);
+}
+
+.back.rotate {
+  transform: rotateY(360deg);
+}
+
+.card-legend {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0 1em;
+}
+
+.card-legend h2 {
+  margin: 0;
+}
+
+h2.translation {
+  margin-top: 1px;
+  padding: 0 1em;
+}
+
+.rotate-img {
+  width: 25px;
+  height: 25px;
+}
+
+.card.game-card.blur {
+  opacity: 0.5;
+  cursor: unset;
+  animation: none;
+}
+
+.hide {
+  display: none;
+}
+
+.health-meter {
+  display: inline-flex;
+  position: absolute;
+  top: -25px;
+  right: 3%;
+  width: auto;
+  max-width: 300px;
+  height: 30px;
+  overflow-x: hidden;
+}
+
+.health-meter div {
+  width: 22px;
+  height: 22px;
+  min-width: 25px;
+  margin: 0.25em;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.heart-win {
+  background-image: url('../assets/img/heart-win.svg');
+}
+
+.heart-lose {
+  background-image: url('../assets/img/heart-lose.svg');
+}
+
+.success, .failure {
+  width: 550px;
+  height: 500px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  animation-name: bringDown;
+  animation-duration: 1500ms;
+}
+
+.success {
+  background-image: url('../assets/img/win.svg');
+}
+
+.failure {
+  position: relative;
+  background-image: url('../assets/img/lost.svg');
+}
+
+.mistakes {
+  position: absolute;
+  top: 67%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Sen', sans-serif;
+  font-size: 1.5em;
+  color: #7F8097;
+}
+
+.repeat-btn {
+  position: absolute;
+  top: 50%;
+  right: -100px;
+  transform: translateY(-50%);
+  width: 80px;
+  height: 80px;
+  background-image: url('../assets/img/repeat.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+  transition: background-image 300ms ease-in-out;
+}
+
+.repeat-btn:hover {
+  background-image: url('../assets/img/repeat-hover.svg');
+}
+
+@media all and (max-width: 1296px) {
+  .card {
+    width: 15em;
+    height: 13em;
+  }
+
+  .health-meter {
+    width: 200px;
+    max-width: 200px;
+    right: 15%;
+  }
+
+  .repeat-btn {
+    right: 3%;
+  }
+}
+
+@media all and (min-width: 977px) {
+  h1 {
+    animation-name: slideUp;
+    animation-duration: 1000ms;
+    animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    animation-fill-mode: both;
+    animation-delay: 1600ms;
+  }
+
+  .card {
+    animation-name: drop;
+    animation-duration: 1000ms;
+    animation-timing-function: cubic-bezier(0, 0.5, 0, 1);
+    animation-fill-mode: both;
+    animation-delay: 500ms;
+  }
+
+  .playground > .card.home-card:nth-of-type(1) {
+    animation-delay: 400ms;
+  }
+
+  .playground > .card.home-card:nth-of-type(2) {
+    animation-delay: 550ms;
+  }
+
+  .playground > .card.home-card:nth-of-type(3) {
+    animation-delay: 700ms;
+  }
+
+  .playground > .card.home-card:nth-of-type(4) {
+    animation-delay: 850ms;
+  }
+
+  .playground > .card.home-card:nth-of-type(5) {
+    animation-delay: 1000ms;
+  }
+
+  .playground > .card.home-card:nth-of-type(6) {
+    animation-delay: 1150ms;
+  }
+
+  .playground > .card.home-card:nth-of-type(7) {
+    animation-delay: 1300ms;
+  }
+
+  .playground > .card.home-card:nth-of-type(8) {
+    animation-delay: 1450ms;
+  }
+
+  .playground > .card:nth-of-type(1) {
+    animation-delay: 400ms;
+  }
+
+  .playground > .card:nth-of-type(2) {
+    animation-delay: 525ms;
+  }
+
+  .playground > .card:nth-of-type(3) {
+    animation-delay: 650ms;
+  }
+
+  .playground > .card:nth-of-type(4) {
+    animation-delay: 775ms;
+  }
+
+  .playground > .card:nth-of-type(5) {
+    animation-delay: 900ms;
+  }
+
+  .playground > .card:nth-of-type(6) {
+    animation-delay: 1025ms;
+  }
+
+  .playground > .card:nth-of-type(7) {
+    animation-delay: 1150ms;
+  }
+
+  .playground > .card:nth-of-type(8) {
+    animation-delay: 1275ms;
+  }
+}
+
+@media all and (max-width: 976px) {
+  .health-meter {
+    right: 4%;
+  }
+
+  .repeat-btn {
+    position: fixed;
+    top: unset;
+    bottom: 5%;
+    right: unset;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+  }
+
+  .success, .failure {
+    width: 450px;
+    height: 400px;
+  }
+}
+
+@media all and (max-width: 656px) {
+  h1 {
+    font-size: 2em;
+    top: -70px;
+  }
+
+  .card {
+    width: 200px;
+    height: 200px;
+    flex-basis: 40%;
+  }
+
+  .home-card .card-legend {
+    width: 120px;
+  }
+
+  .card-legend h2 {
+    font-size: 1.25em;
+  }
+
+  .health-meter {
+    left: 50%;
+    top: -75px;
+    right: unset;
+    transform: translateX(-50%);
+    width: auto;
+  }
+
+  .success, .failure {
+    width: 400px;
+    height: 360px;
+  }
+}
+
+@media all and (max-width: 550px) {
+  .card {
+    flex-basis: 45%;
+    margin: 0.5em;
+  }
+
+  .home-card {
+    margin: 1em 0.5em;
+  }
+}
+
+@media all and (max-width: 450px) {
+  h1 {
+    font-size: 1.75em;
+    top: -60px;
+  }
+
+  .card {
+    width: 150px;
+    height: 175px;
+  }
+
+  .gradient {
+    height: 65%;
+  }
+
+  .home-card .card-legend {
+    width: 100px;
+  }
+
+  .card-legend h2 {
+    font-size: 1.1em;
+  }
+
+  .rotate-img {
+    width: 20px;
+    height: 20px;
+  }
+
+  
+}
+
+@media all and (max-width: 360px) {
+  .card {
+    width: 225px;
+    height: 225px;
+    flex-basis: unset;
+  }
+
+  .success, .failure {
+    width: 300px;
+    height: 280px;
+  }
+}

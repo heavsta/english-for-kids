@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Roboto&family=Sen&display=swap');
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 92%;
+  background-image: url('../assets/img/bg.webp');
+  background-position: center;
+  background-size: cover;
+  font-family: 'Roboto', sans-serif;
+}
+
+@media all and (max-width: 976px) {
+  body {
+    overflow-x: hidden;
+  }
+}
